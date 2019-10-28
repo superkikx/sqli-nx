@@ -16,6 +16,12 @@
     },
     "gui": {
       "tags": []
+    },
+    "demo-renaud": {
+      "tags": []
+    },
+    "demo-renaud-e2e": {
+      "tags": []
     }
   }
 }
