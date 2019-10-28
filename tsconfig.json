@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sqli/gui": ["libs/gui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
