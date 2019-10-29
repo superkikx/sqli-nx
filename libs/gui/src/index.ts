@@ -7,3 +7,4 @@ export * from "./lib/demo/demo";
 export * from "./lib/logo/logo";
 export * from "./lib/audioplayer/audio-player";
 export * from "./lib/Menu/menu-sofiane";
+export * from "./lib/Menu/link/link";
