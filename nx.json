@@ -40,6 +40,12 @@
     },
     "demo-ldev-e2e": {
       "tags": []
+    },
+    "demo-abdeljelil": {
+      "tags": []
+    },
+    "demo-abdeljelil-e2e": {
+      "tags": []
     }
   }
 }
