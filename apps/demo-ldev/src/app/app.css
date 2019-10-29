@@ -1,7 +1,10 @@
 /*
  * Remove template code below
  */
-
+.btn btn-primary btn-lg{
+  background-color: #0094ba;
+  
+}
 .app {
   font-family: sans-serif;
   min-width: 300px;
