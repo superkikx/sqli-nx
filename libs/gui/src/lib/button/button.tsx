@@ -1,9 +1,14 @@
 import React from "react";
 
-export const Button = (props) => {
+import "./button.css";
+
+/* eslint-disable-next-line */
+export interface ButtonProps {}
+
+export const Button = (props: ButtonProps) => {
   return (
     <div>
-      <h1>Welcome to Button component!</h1>
+      <h1>Welcome to button component!</h1>
     </div>
   );
 };
