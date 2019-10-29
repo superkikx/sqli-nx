@@ -1,16 +1,19 @@
 import React from "react";
-
+import propTypes from './breadcrumb.props'
 import "./breadcrumb.css";
 
-/* eslint-disable-next-line */
-export interface BreadcrumbProps {}
-
-export const Breadcrumb = (props: BreadcrumbProps) => {
-  return (
-    <div>
-      <h1>Welcome to breadcrumb component!</h1>
-    </div>
+export const BreadcrumbSqli = (props) => {
+    return (
+      <nav className="breadcrumb">
+          <ul className="list">
+              <li className="list-item">
+                  <a href={props.link}>{props.label}</a>
+              </li>
+          </ul>
+      </nav>
   );
 };
+BreadcrumbSqli.propTypes = propTypes;
 
-export default Breadcrumb;
+export default BreadcrumbSqli;
+
