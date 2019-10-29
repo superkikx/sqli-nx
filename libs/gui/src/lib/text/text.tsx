@@ -2,14 +2,20 @@ import React from "react";
 
 import "./text.css";
 
+/**
+ *  <Text>
+        {{
+          title: "Fishipedia",
+          subtitle: "L'encylopédie du monde aquatique",
+          href: "https://www.fishipedia.fr/",
+          content: '“Fishipedia.fr - 1er site encyclopédique dédié aux poissons et aux passions associées : Plongée, Snorkeling, Aquariophilie, Pêche.”',
+          imageSrc: 'https://www.fishipedia.fr/wp-content/themes/fishipedia/css/img/home/thematics/fishes.jpg'
+        }}
+      </Text>
+ * @param props 
+ */
 export const Text = (props) => {
   return (
-    /*<a className="text-component" href={props.children.href}>
-      {props.children.title && <h1>{props.children.title}</h1>}
-      {props.children.subtitle && <h2>{props.children.subtitle}</h2>}
-      {props.children.content && <p>{props.children.content}</p>}
-      {props.children.imageSrc && <img src={props.children.imageSrc} />}
-    </a>*/
     <div className="card 1 flip-card">
       <div className="flip-card-inner">
         <div className="flip-card-front">
@@ -26,21 +32,6 @@ export const Text = (props) => {
         </div>
       </div>
     </div>
-
-    /*
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>John Doe</h1>
-      <p>Architect & Engineer</p>
-      <p>We love that guy</p>
-    </div>
-  </div>
-</div>
-    */
   );
 };
 

@@ -136,4 +136,5 @@
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
+    background: url(https://www.fishipedia.fr/wp-content/themes/fishipedia/css/img/overlay.png) #333;
   }
