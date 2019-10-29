@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import DemoSofiane from "./menu-sofiane";
+import { MenuSofiane } from "./menu-sofiane";
 
-describe(" DemoSofiane", () => {
+describe(" MenuSofiane", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<DemoSofiane />);
+    const { baseElement } = render(<MenuSofiane />);
     expect(baseElement).toBeTruthy();
   });
 });

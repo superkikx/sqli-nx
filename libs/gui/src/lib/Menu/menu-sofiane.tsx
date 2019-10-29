@@ -2,15 +2,12 @@ import React from "react";
 
 import "./menu-sofiane.css";
 
-/* eslint-disable-next-line */
-export interface DemoSofianeProps {}
-
-export const DemoSofiane = (props: DemoSofianeProps) => {
-  return (
-    <div>
-      <h1>Welcome to demo-sofiane component!</h1>
-    </div>
-  );
+const MenuSofiane = props => {
+  const isBackground = props.isBackground;
+  const direction = props.direction;
+  return ( 
+    <div className={isBackground ? 'background' : 'background-none'} />
+  )
 };
 
-export default DemoSofiane;
+export default MenuSofiane;

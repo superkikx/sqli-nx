@@ -6,3 +6,4 @@ export * from "./lib/text/text";
 export * from "./lib/demo/demo";
 export * from "./lib/logo/logo";
 export * from "./lib/audioplayer/audio-player";
+export * from "./lib/Menu/menu-sofiane";
