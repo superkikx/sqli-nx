@@ -573,7 +573,7 @@
             "outputPath": "dist/apps/demo-sofiane",
             "index": "apps/demo-sofiane/src/index.html",
             "main": "apps/demo-sofiane/src/main.tsx",
-            "polyfills": "apps/demo-sofiane/src/polyfills.ts",
+            "polyfills": "",
             "tsConfig": "apps/demo-sofiane/tsconfig.app.json",
             "assets": [
               "apps/demo-sofiane/src/favicon.ico",
