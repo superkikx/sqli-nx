@@ -6,9 +6,10 @@ import "./app.css";
 
 export const App = () => {
 
+const data = ['France','Morocco', 'usa', 'Canada'];
   return (
     <div className="app">
-      <Autocomplete/>
+      <Autocomplete data={data} placeholder="e.g. Denmark"/>
     </div>
   );
 };
