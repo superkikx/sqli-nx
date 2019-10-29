@@ -1,0 +1,42 @@
+.playlist {
+  font-size: 14px;
+  line-height: 20px;
+  list-style: none;
+
+  li {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .015em;
+    font-weight: var(--glue-font-weight-normal);
+    color: black;
+    text-transform: none;
+    font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+    --glue-font-weight-normal: 400;
+    --glue-font-weight-bold: 700;
+    --glue-font-weight-black: 900;
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-direction: normal;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+    display: flex;
+    height: 4.56em;
+    list-style-type: none;
+    user-select: none;
+    outline: none;
+
+    &.current {
+      font-weight: bold;
+    }
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
