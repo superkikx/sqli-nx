@@ -145,33 +145,15 @@
         }
       }
     },
-<<<<<<< HEAD
-    "demo-khalil": {
-      "root": "apps/demo-khalil",
-      "sourceRoot": "apps/demo-khalil/src",
-=======
     "demo-max": {
       "root": "apps/demo-max",
       "sourceRoot": "apps/demo-max/src",
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
       "projectType": "application",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@nrwl/web:build",
           "options": {
-<<<<<<< HEAD
-            "outputPath": "dist/apps/demo-khalil",
-            "index": "apps/demo-khalil/src/index.html",
-            "main": "apps/demo-khalil/src/main.tsx",
-            "polyfills": "apps/demo-khalil/src/polyfills.ts",
-            "tsConfig": "apps/demo-khalil/tsconfig.app.json",
-            "assets": [
-              "apps/demo-khalil/src/favicon.ico",
-              "apps/demo-khalil/src/assets"
-            ],
-            "styles": ["apps/demo-khalil/src/styles.css"],
-=======
             "outputPath": "dist/apps/demo-max",
             "index": "apps/demo-max/src/index.html",
             "main": "apps/demo-max/src/main.tsx",
@@ -182,7 +164,6 @@
               "apps/demo-max/src/assets"
             ],
             "styles": ["apps/demo-max/src/styles.css"],
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/babel"
           },
@@ -190,13 +171,8 @@
             "production": {
               "fileReplacements": [
                 {
-<<<<<<< HEAD
-                  "replace": "apps/demo-khalil/src/environments/environment.ts",
-                  "with": "apps/demo-khalil/src/environments/environment.prod.ts"
-=======
                   "replace": "apps/demo-max/src/environments/environment.ts",
                   "with": "apps/demo-max/src/environments/environment.prod.ts"
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
                 }
               ],
               "optimization": true,
@@ -219,19 +195,11 @@
         "serve": {
           "builder": "@nrwl/web:dev-server",
           "options": {
-<<<<<<< HEAD
-            "buildTarget": "demo-khalil:build"
-          },
-          "configurations": {
-            "production": {
-              "buildTarget": "demo-khalil:build:production"
-=======
             "buildTarget": "demo-max:build"
           },
           "configurations": {
             "production": {
               "buildTarget": "demo-max:build:production"
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
             }
           }
         },
@@ -239,56 +207,29 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-<<<<<<< HEAD
-              "apps/demo-khalil/tsconfig.app.json",
-              "apps/demo-khalil/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/demo-khalil/**"]
-=======
               "apps/demo-max/tsconfig.app.json",
               "apps/demo-max/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**", "!apps/demo-max/**"]
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-<<<<<<< HEAD
-            "jestConfig": "apps/demo-khalil/jest.config.js",
-            "tsConfig": "apps/demo-khalil/tsconfig.spec.json"
-=======
             "jestConfig": "apps/demo-max/jest.config.js",
             "tsConfig": "apps/demo-max/tsconfig.spec.json"
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
           }
         }
       }
     },
-<<<<<<< HEAD
-    "demo-khalil-e2e": {
-      "root": "apps/demo-khalil-e2e",
-      "sourceRoot": "apps/demo-khalil-e2e/src",
-=======
     "demo-max-e2e": {
       "root": "apps/demo-max-e2e",
       "sourceRoot": "apps/demo-max-e2e/src",
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-<<<<<<< HEAD
-            "cypressConfig": "apps/demo-khalil-e2e/cypress.json",
-            "tsConfig": "apps/demo-khalil-e2e/tsconfig.e2e.json",
-            "devServerTarget": "demo-khalil:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "demo-khalil:serve:production"
-=======
             "cypressConfig": "apps/demo-max-e2e/cypress.json",
             "tsConfig": "apps/demo-max-e2e/tsconfig.e2e.json",
             "devServerTarget": "demo-max:serve"
@@ -296,17 +237,12 @@
           "configurations": {
             "production": {
               "devServerTarget": "demo-max:serve:production"
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-<<<<<<< HEAD
-            "tsConfig": ["apps/demo-khalil-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/demo-khalil-e2e/**"]
-=======
             "tsConfig": ["apps/demo-max-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/demo-max-e2e/**"]
           }
@@ -621,7 +557,6 @@
           "options": {
             "tsConfig": ["apps/demo-yuhei-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/demo-yuhei-e2e/**"]
->>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
           }
         }
       }
