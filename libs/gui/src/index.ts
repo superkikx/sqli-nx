@@ -1,2 +1,1 @@
-export * from "./lib/demo";
-export * from "./lib/gui";
+export * from "./lib/demo/demo";
