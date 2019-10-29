@@ -1,6 +1,8 @@
 import React from "react";
 
 import "./app.css";
+import Breadcrumb from "@sqli/gui";
+import {AudioPlayer} from "@sqli/gui";
 
 export const App = () => {
   /*
@@ -18,6 +20,8 @@ export const App = () => {
         />
         <h1>Welcome to demo-max!</h1>
       </header>
+      <Breadcrumb/>
+      <AudioPlayer/>
       <main>
         <h2>Resources &amp; Tools</h2>
         <p>Thank you for using and showing some ♥ for Nx.</p>

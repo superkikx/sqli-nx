@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./app.scss";
+import "./app.css";
 
 export const App = () => {
   /*
@@ -16,7 +16,7 @@ export const App = () => {
           width="75"
           src="https://nx.dev/assets/images/nx-logo-white.svg"
         />
-        <h1>Welcome to demo-audio-player!</h1>
+        <h1>Welcome to demo-khalil!</h1>
       </header>
       <main>
         <h2>Resources &amp; Tools</h2>
