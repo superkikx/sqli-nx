@@ -16,6 +16,12 @@
     },
     "gui": {
       "tags": []
+    },
+    "demo-khalil": {
+      "tags": []
+    },
+    "demo-khalil-e2e": {
+      "tags": []
     }
   }
 }
