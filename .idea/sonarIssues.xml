@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/apps/audioplayer-test/src/app/app.css">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/apps/audioplayer-test/src/app/app.tsx">
           <value>
             <set />
@@ -59,6 +64,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/libs/gui/src/lib/audioplayer/pl.json">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/lib/breadcrumb/breadcrumb.tsx">
           <value>
             <set />
           </value>

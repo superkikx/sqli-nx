@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./app.css";
-import {AudioPlayer} from "@sqli/gui";
+import { AudioPlayer , BreadcrumbSqli } from "@sqli/gui";
 
 export const App = () => {
   /*
@@ -11,7 +11,7 @@ export const App = () => {
    */
   return (
     <div className="app">
-      <AudioPlayer coverImage={ 'https://i.scdn.co/image/ab67616d0000b273f9d64ac5b0e042252e3a561a' }/>
+      <AudioPlayer />
     </div>
   );
 };

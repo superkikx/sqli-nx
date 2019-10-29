@@ -15,7 +15,7 @@ export const List = props => {
 
     return (
         <ul className="playlist">
-            { tracks.map((x, i) => <li className={ isCurrent === x ? 'current' : '' } onClick={ () => handlePreview(x) } key={ i }> { x.name } </li>)}
+            { tracks.map((x, i) => <li className={ isCurrent === x ? 'current' : '' } onClick={ () => {handlePreview(x); props.retrieveName(x.name) }} key={ i }> { x.name } </li>)}
         </ul>
     )
 };
