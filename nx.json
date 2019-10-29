@@ -34,6 +34,12 @@
     },
     "momo-demo-e2e": {
       "tags": []
+    },
+    "demo-ldev": {
+      "tags": []
+    },
+    "demo-ldev-e2e": {
+      "tags": []
     }
   }
 }

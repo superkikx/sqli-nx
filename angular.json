@@ -768,6 +768,110 @@
           }
         }
       }
+    },
+    "demo-ldev": {
+      "root": "apps/demo-ldev",
+      "sourceRoot": "apps/demo-ldev/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/demo-ldev",
+            "index": "apps/demo-ldev/src/index.html",
+            "main": "apps/demo-ldev/src/main.tsx",
+            "polyfills": "apps/demo-ldev/src/polyfills.ts",
+            "tsConfig": "apps/demo-ldev/tsconfig.app.json",
+            "assets": [
+              "apps/demo-ldev/src/favicon.ico",
+              "apps/demo-ldev/src/assets"
+            ],
+            "styles": ["apps/demo-ldev/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/babel"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/demo-ldev/src/environments/environment.ts",
+                  "with": "apps/demo-ldev/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "demo-ldev:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "demo-ldev:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/demo-ldev/tsconfig.app.json",
+              "apps/demo-ldev/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/demo-ldev/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/demo-ldev/jest.config.js",
+            "tsConfig": "apps/demo-ldev/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "demo-ldev-e2e": {
+      "root": "apps/demo-ldev-e2e",
+      "sourceRoot": "apps/demo-ldev-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/demo-ldev-e2e/cypress.json",
+            "tsConfig": "apps/demo-ldev-e2e/tsconfig.e2e.json",
+            "devServerTarget": "demo-ldev:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demo-ldev:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/demo-ldev-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo-ldev-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {
