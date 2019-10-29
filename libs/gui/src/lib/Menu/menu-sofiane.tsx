@@ -2,12 +2,17 @@ import React from "react";
 
 import "./menu-sofiane.css";
 
-const MenuSofiane = props => {
-  const isBackground = props.isBackground;
-  const direction = props.direction;
+export const MenuSofiane = props => {
+  const isBackground = props.isBackground  ? 'background' : 'background-none' ;
+  const isVertical = props.isVertical ? 'menu-vertical' : 'menu-horizontal';
   return ( 
-    <div className={isBackground ? 'background' : 'background-none'} />
+    <div className= {`${isBackground} ${isVertical}`}>
+      
+      </div>
   )
 };
-
+MenuSofiane.defaultProps = {
+  isBackground:false,
+  isVertical:false
+}
 export default MenuSofiane;

@@ -5,7 +5,7 @@ import "./app.css";
 
 export const App = () => {
   return (
-    <MenuSofiane/>
+    <MenuSofiane isBackground={true} isVertical={false}/>
   );
 };
 
