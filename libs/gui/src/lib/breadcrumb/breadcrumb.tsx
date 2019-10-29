@@ -18,7 +18,20 @@ export const BreadcrumbSqli = (props) => {
   );
 };
 BreadcrumbSqli.defaultProps = {
-    trail:[]
+    trail:[
+        {
+            action:'http://www.rorymcilroy.com/',
+            label:'Rory Mcilroy'
+        },
+        {
+            action:'https://twitter.com/kikxmachine',
+            label:'Superkikx'
+        },
+        {
+            action:'https://tigerwoods.com/',
+            label:'Tiger Woods'
+        }
+    ]
 };
 BreadcrumbSqli.propTypes = propTypes;
 
