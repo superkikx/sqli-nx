@@ -1,5 +1,5 @@
 import React from "react";
-import {Logo} from '@sqli/gui';
+import {Logo, Text} from '@sqli/gui';
 
 import "./app.css";
 export const App = () => {
@@ -9,6 +9,8 @@ export const App = () => {
             <Logo size="medium" />
             <Logo size="small" />
         </div>
+
+
       );
 }
 export default App;

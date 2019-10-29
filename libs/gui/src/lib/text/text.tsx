@@ -28,7 +28,12 @@ export const Text = (props) => {
           </div>
         </div>
         <div className="flip-card-back">
-            {props.children.content && <p>{props.children.content}</p>}
+            {props.children.content && 
+            <p>
+            {props.children.content}
+            {props.children.href && <a href={props.children.href}>{props.children.ctaTitle}</a>}
+            </p>}
+            
         </div>
       </div>
     </div>

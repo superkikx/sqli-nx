@@ -24,7 +24,6 @@
     height: 300px;
     border-radius: 40px;
   /*box-shadow: 5px 5px 30px 2px rgba(0,0,0,0.25), -5px -5px 30px 2px rgba(0,0,0,0.22);*/
-    cursor: pointer;
     transition: 0.4s;
   }
   
@@ -137,4 +136,13 @@
     display: flex;
     align-items: center;
     background: url(https://www.fishipedia.fr/wp-content/themes/fishipedia/css/img/overlay.png) #333;
+  }
+
+  .flip-card-back p a {
+    display: block;
+    color: #fff;
+    padding-top: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
   }
