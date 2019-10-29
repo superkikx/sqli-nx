@@ -50,11 +50,12 @@
     height: 40px;
   }
   
-  .card:hover {
+  .card:hover{
     transform: scale(0.9, 0.9);
-    /*box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
-      -5px -5px 30px 15px rgba(0,0,0,0.22);*/
   }
+
+
+  
   
   .title-white {
     color: white;
@@ -108,8 +109,11 @@
   }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
+  .flip-card:hover .flip-card-inner, .reversed.flip-card .flip-card-inner{
     transform: rotateY(180deg);
+  }
+.reversed.flip-card:hover .flip-card-inner{
+    transform: rotateY(360deg);
   }
   
   /* Position the front and back side */
@@ -145,4 +149,35 @@
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .flip-card-back p a:hover {
+    font-weight: bolder;
+  }
+
+  i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
   }
