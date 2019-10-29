@@ -4,6 +4,11 @@ import "./app.css";
 import {Text} from '@sqli/gui'
 import {AudioPlayer} from '@sqli/gui'
 import {BreadcrumbSqli} from '@sqli/gui'
+import {MenuSofiane} from '@sqli/gui'
+import {Logo} from '@sqli/gui'
+import {Button} from '@sqli/gui'
+import {Footer} from '@sqli/gui'
+import {Autocomplete} from '@sqli/gui'
 
 export const App = () => {
   /*
@@ -12,9 +17,37 @@ export const App = () => {
    * Note: The corresponding styles are in the ./${fileName}.${style} file.
    * 
    */
+
+  const data = ['France','Morocco', 'usa', 'Canada'];
+  const menu = [
+    { label: 'Lien 1', action: 'http://google.fr' },
+    { label: 'Lien 2', action: 'http://google.fr' },
+    { label: 'Lien 3', action: 'http://google.fr' },
+    { label: 'Lien 4', action: 'http://google.fr' }
+  ];
+  const trail = [
+    {
+        action:'http://www.rorymcilroy.com/',
+        label:'Rory Mcilroy'
+    },
+    {
+        action:'https://twitter.com/kikxmachine',
+        label:'Superkikx'
+    },
+    {
+        action:'https://tigerwoods.com/',
+        label:'Tiger Woods'
+    }
+];
+
   return (
     <div className="app">
-      <BreadcrumbSqli />
+      <Logo size="small"/>
+      <MenuSofiane>{menu}</MenuSofiane>
+      <BreadcrumbSqli>{trail}</BreadcrumbSqli>
+      <AudioPlayer coverImage="https://www.fishipedia.fr/wp-content/themes/fishipedia/css/img/home/thematics/fishes.jpg"/>
+      <Autocomplete data={data} placeholder="e.g. Denmark"/>
+      <Button>Lancer la recherche</Button>
       <Text>
         {{
           title: "Fishipedia",
@@ -26,15 +59,8 @@ export const App = () => {
           reversed: false
         }}
       </Text>
-      <AudioPlayer/>
-      <Text>
-        {{
-          subtitle: "L'encylopédie du monde aquatique",
-          href: "https://www.fishipedia.fr/",
-          content: '“Fishipedia.fr - 1er site encyclopédique dédié aux poissons et aux passions associées : Plongée, Snorkeling, Aquariophilie, Pêche.”'
-        }}
-      </Text>
-    </div>
+      <Footer background="gray"></Footer>
+      </div>
   );
 };
 
