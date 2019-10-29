@@ -17,10 +17,29 @@
     "gui": {
       "tags": []
     },
+<<<<<<< HEAD
     "demo-khalil": {
       "tags": []
     },
     "demo-khalil-e2e": {
+=======
+    "demo-renaud": {
+      "tags": []
+    },
+    "demo-renaud-e2e": {
+      "tags": []
+    },
+    "demo-max": {
+      "tags": []
+    },
+    "demo-max-e2e": {
+      "tags": []
+    },
+    "demo-yuhei": {
+      "tags": []
+    },
+    "demo-yuhei-e2e": {
+>>>>>>> 5c8539d4603e19156190bd4f9b72487b4acbaa63
       "tags": []
     }
   }

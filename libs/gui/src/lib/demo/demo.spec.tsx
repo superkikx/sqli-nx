@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Gui from "./gui";
+import Demo from "./demo";
 
-describe(" Gui", () => {
+describe(" Demo", () => {
   it("should render successfully", () => {
-    const { baseElement } = render(<Gui />);
+    const { baseElement } = render(<Demo />);
     expect(baseElement).toBeTruthy();
   });
 });
