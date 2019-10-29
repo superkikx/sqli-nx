@@ -8,7 +8,6 @@ export const Autocomplete = (props) => {
   const [input,setInput] = React.useState(props.input || '');
 
   const changeHandler = evt => {
-    // console.log(evt.target.value);
     setInput(evt.target.value);
   }
 
@@ -22,7 +21,8 @@ export const Autocomplete = (props) => {
           className="form-control mdb-autocomplete"
           value={input}
           onChange={changeHandler} 
-          placeholder={props.placeholder}/>
+          placeholder={props.placeholder}
+          onBlur={ () => (typeof props.action === 'function') && props.action(input) }/>
           <div>
           {input && props.data.filter( value => value.startsWith(input)).map( (value,num) => <div key={num} onClick={ ()=> setInput(value) }>{value}<hr/></div>)}
           </div>
