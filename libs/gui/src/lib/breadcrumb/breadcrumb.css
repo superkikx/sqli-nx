@@ -1,0 +1,37 @@
+.breadcrumb {
+    background-color: #333333;
+    color: #fff;
+    padding: 5px 20px;
+}
+
+.breadcrumb .list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.breadcrumb .list .list-item {
+    display: inline-flex;
+}
+
+.breadcrumb a {
+    color: #7d7d7d;
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 10px;
+    transition: all 200ms;
+}
+
+.breadcrumb a:hover {
+    color: #b1b1b1;
+}
+
+.breadcrumb a:after {
+    content: '/';
+    padding-left: 5px;
+}
+
+.breadcrumb span {
+    padding: 5px;
+    padding-left: 10px;
+}

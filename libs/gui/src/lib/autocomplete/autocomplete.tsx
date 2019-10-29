@@ -1,15 +1,20 @@
 import React from "react";
+import ReactDOM from 'react-dom';
 
 import "./autocomplete.css";
 
-/* eslint-disable-next-line */
-export interface AutocompleteProps {}
-
-export const Autocomplete = (props: AutocompleteProps) => {
+export const Autocomplete = (props) => {
   return (
-    <div>
+    <React-Fragment>
       <h1>Welcome to autocomplete component!</h1>
-    </div>
+
+        <div className="md-form">
+          <input type="search" id="form-autocomplete" className="form-control mdb-autocomplete"/>
+
+         <label for="form-autocomplete" className="active">What is your favorite US state?</label>
+        </div>
+
+    </React-Fragment>
   );
 };
 
