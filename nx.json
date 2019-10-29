@@ -40,6 +40,12 @@
     },
     "demo-yuhei-e2e": {
       "tags": []
+    },
+    "demo-sofiane": {
+      "tags": []
+    },
+    "demo-sofiane-e2e": {
+      "tags": []
     }
   }
 }

@@ -560,6 +560,110 @@
           }
         }
       }
+    },
+    "demo-sofiane": {
+      "root": "apps/demo-sofiane",
+      "sourceRoot": "apps/demo-sofiane/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/demo-sofiane",
+            "index": "apps/demo-sofiane/src/index.html",
+            "main": "apps/demo-sofiane/src/main.tsx",
+            "polyfills": "apps/demo-sofiane/src/polyfills.ts",
+            "tsConfig": "apps/demo-sofiane/tsconfig.app.json",
+            "assets": [
+              "apps/demo-sofiane/src/favicon.ico",
+              "apps/demo-sofiane/src/assets"
+            ],
+            "styles": ["apps/demo-sofiane/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/babel"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/demo-sofiane/src/environments/environment.ts",
+                  "with": "apps/demo-sofiane/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "demo-sofiane:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "demo-sofiane:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/demo-sofiane/tsconfig.app.json",
+              "apps/demo-sofiane/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/demo-sofiane/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/demo-sofiane/jest.config.js",
+            "tsConfig": "apps/demo-sofiane/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "demo-sofiane-e2e": {
+      "root": "apps/demo-sofiane-e2e",
+      "sourceRoot": "apps/demo-sofiane-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/demo-sofiane-e2e/cypress.json",
+            "tsConfig": "apps/demo-sofiane-e2e/tsconfig.e2e.json",
+            "devServerTarget": "demo-sofiane:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demo-sofiane:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/demo-sofiane-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo-sofiane-e2e/**"]
+          }
+        }
+      }
     }
   },
   "cli": {
