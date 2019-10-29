@@ -8,7 +8,7 @@ export interface ButtonProps {}
 export const Button = (props: ButtonProps) => {
   return (
     <div>
-      <h1>Welcome to button component!</h1>
+      <button>Welcome to button component!</button>
     </div>
   );
 };
