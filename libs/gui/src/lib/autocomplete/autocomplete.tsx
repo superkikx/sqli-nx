@@ -5,7 +5,7 @@ import "./autocomplete.css";
 
 export const Autocomplete = (props) => {
 
-  const [input,setInput] = React.useState('');
+  const [input,setInput] = React.useState(props.input || '');
 
   const changeHandler = evt => {
     // console.log(evt.target.value);
