@@ -417,6 +417,110 @@
         }
       }
     },
+    "audioplayer-test": {
+      "root": "apps/audioplayer-test",
+      "sourceRoot": "apps/audioplayer-test/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/audioplayer-test",
+            "index": "apps/audioplayer-test/src/index.html",
+            "main": "apps/audioplayer-test/src/main.tsx",
+            "polyfills": "apps/audioplayer-test/src/polyfills.ts",
+            "tsConfig": "apps/audioplayer-test/tsconfig.app.json",
+            "assets": [
+              "apps/audioplayer-test/src/favicon.ico",
+              "apps/audioplayer-test/src/assets"
+            ],
+            "styles": ["apps/audioplayer-test/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/babel"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/audioplayer-test/src/environments/environment.ts",
+                  "with": "apps/audioplayer-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "audioplayer-test:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "audioplayer-test:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/audioplayer-test/tsconfig.app.json",
+              "apps/audioplayer-test/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/audioplayer-test/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/audioplayer-test/jest.config.js",
+            "tsConfig": "apps/audioplayer-test/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "audioplayer-test-e2e": {
+      "root": "apps/audioplayer-test-e2e",
+      "sourceRoot": "apps/audioplayer-test-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/audioplayer-test-e2e/cypress.json",
+            "tsConfig": "apps/audioplayer-test-e2e/tsconfig.e2e.json",
+            "devServerTarget": "audioplayer-test:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "audioplayer-test:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/audioplayer-test-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/audioplayer-test-e2e/**"]
+          }
+        }
+      }
+    },
     "demo-yuhei": {
       "root": "apps/demo-yuhei",
       "sourceRoot": "apps/demo-yuhei/src",

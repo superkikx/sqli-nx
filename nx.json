@@ -29,6 +29,12 @@
     "demo-renaud-e2e": {
       "tags": []
     },
+    "audioplayer-test": {
+      "tags": []
+    },
+    "audioplayer-test-e2e": {
+      "tags": []
+    },
     "demo-max": {
       "tags": []
     },
