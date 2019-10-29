@@ -6,12 +6,19 @@ export const BreadcrumbSqli = (props) => {
     return (
       <nav className="breadcrumb">
           <ul className="list">
-              <li className="list-item">
-                  <a href={props.link}>{props.label}</a>
-              </li>
+              { props.trail && props.trail.map( (link, indice ) => (
+                  <li className="list-item" key={ indice }>
+                      <a href={link.action}>{link.label}</a>
+                  </li>
+                  )
+                )
+              }
           </ul>
       </nav>
   );
+};
+BreadcrumbSqli.defaultProps = {
+    trail:[]
 };
 BreadcrumbSqli.propTypes = propTypes;
 
