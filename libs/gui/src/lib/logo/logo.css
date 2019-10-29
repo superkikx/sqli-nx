@@ -1,0 +1,30 @@
+
+.logo img{
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+div.logo>h1{
+    text-transform: uppercase;
+    font-size: 5em;
+    margin:0;
+}
+
+.logo.big{
+    transform:scale(1);
+}
+
+.logo.medium{
+    transform:scale(.7);
+}
+
+.logo.small{
+    transform:scale(.3);
+}
