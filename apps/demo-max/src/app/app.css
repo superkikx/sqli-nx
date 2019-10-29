@@ -2,11 +2,14 @@
  * Remove template code below
  */
 
+body {
+  margin: 0;
+}
+
 .app {
   font-family: sans-serif;
+  max-width: 1024px;
   min-width: 300px;
-  max-width: 600px;
-  margin: 50px auto;
 }
 
 .app .gutter-left {
@@ -24,14 +27,16 @@
 }
 
 .app header {
-  background-color: #143055;
-  color: white;
   padding: 5px;
   border-radius: 3px;
 }
 
 .app main {
-  padding: 0 36px;
+  padding: 43px 36px;
+}
+
+.app main aside {
+  width: 350px;
 }
 
 .app p {

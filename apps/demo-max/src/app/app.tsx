@@ -1,42 +1,33 @@
 import React from "react";
 
 import "./app.css";
-import {AudioPlayer, BreadcrumbSqli, Text} from "@sqli/gui";
+import  {AudioPlayer, Autocomplete, BreadcrumbSqli, Logo, MenuSofiane} from "@sqli/gui";
 
-const data = [
-        {
-            action:'http://www.rorymcilroy.com/',
-            label:'Rory Mcilroy'
-        },
-        {
-            action:'https://twitter.com/kikxmachine',
-            label:'Superkikx'
-        },
-        {
-            action:'https://tigerwoods.com/',
-            label:'Tiger Woods'
-        },
-        {
-          action:()=>alert(123),
-          label:'Tiger Woods 2'
-      }
-    ];
 
 
 export const App = () => {
   return (
     <div className="app">
-      <BreadcrumbSqli trail={data}/>
-        <Text>
-            {{
-                title: "Fishipedia",
-                subtitle: "L'encylopédie du monde aquatique",
-                href: "https://www.fishipedia.fr/",
-                content: '“Fishipedia.fr - 1er site encyclopédique dédié aux poissons et aux passions associées : Plongée, Snorkeling, Aquariophilie, Pêche.”',
-                imageSrc: 'https://www.fishipedia.fr/wp-content/themes/fishipedia/css/img/home/thematics/fishes.jpg'
-            }}
-        </Text>
-      <AudioPlayer coverImage={''}/>
+        <header>
+            <Logo size="medium" />
+            <MenuSofiane background={true} direction="horizontal" >
+                {[
+                    { label: 'Lien 1', action: 'http://google.fr' },
+                    { label: 'Lien 2', action: 'http://google.fr' },
+                    { label: 'Lien 3', action: 'http://google.fr' },
+                    { label: 'Lien 4', action: 'http://google.fr' }
+                ]}
+            </MenuSofiane>
+        </header>
+        <main>
+            <div>
+                <AudioPlayer/>
+            </div>
+            <div>
+                <BreadcrumbSqli/>
+                <Autocomplete />
+            </div>
+        </main>
     </div>
   );
 };
