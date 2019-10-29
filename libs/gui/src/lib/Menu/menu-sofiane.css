@@ -1,14 +1,51 @@
 .background-none {
     background-color: none;
-  }
-  
-  .background-blue {
-    background-color: blue;
-  }
+}
 
-  .menu-vertical {
-    
-  }
-  .menu-horizontal{
-      
-  }
+.background {
+    background-color: rgb(245, 209, 184);
+}
+
+.menu{
+    display: flex;
+    padding:10px;
+}
+
+.menu.menu-vertical {
+    flex-direction: column;
+    max-width: 200px;
+}
+
+.menu.menu-vertical a{
+    min-width: 100px;
+    border-top: 1px solid rgb(11, 19, 19);
+    margin-bottom:5px;
+    padding:10px;
+}
+
+.menu.menu-horizontal {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.menu.menu-horizontal a{
+    min-width: 100px;
+    border-right: 1px solid rgb(11, 19, 19);
+    margin-right:10px;
+}
+
+.menu a{
+    display: inline-block;
+    text-decoration:none;
+    text-transform: capitalize;
+    color:rgb(11, 19, 19);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:3px;
+    transition: transform .3s ease;
+}
+
+.menu a:hover{
+  transform:scale(1.1);
+}

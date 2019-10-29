@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 const propTypes = {
     trail:PropTypes.arrayOf(
         PropTypes.shape({
-            label:PropTypes.array.isRequired,
-            action:PropTypes.array.isRequired
+            label:PropTypes.string.isRequired,
+            action:PropTypes.string.isRequired
         })
     ).isRequired
 

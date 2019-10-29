@@ -1,16 +1,22 @@
 import React from "react";
 
 import "./logo.css";
+import { LogoImage } from './logo-image';
+import  PropTypes  from 'prop-types';
 
-/* eslint-disable-next-line */
-export interface LogoProps {}
 
-export const Logo = (props: LogoProps) => {
+
+export const Logo = (props) => {
   return (
-    <div>
-      <h1>Welcome to logo component!</h1>
+    <div className={ "logo " + props.size}>
+     <LogoImage /> 
+     <h1>SpotiFoo</h1>
     </div>
   );
 };
+
+Logo.propTypes = {
+  size:PropTypes.oneOf(['big','medium','small'])
+}
 
 export default Logo;
