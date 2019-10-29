@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./demo-sofiane.css";
+import "./menu-sofiane.css";
 
 /* eslint-disable-next-line */
 export interface DemoSofianeProps {}
