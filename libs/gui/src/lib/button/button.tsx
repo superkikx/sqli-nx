@@ -2,15 +2,15 @@ import React from "react";
 
 import "./button.css";
 
-/* eslint-disable-next-line */
-export interface ButtonProps {}
+export const Button = (props) => {
 
-export const Button = (props: ButtonProps) => {
+  const propsTypes = props.children;
+  
   return (
-    <div>
-      <button>Welcome to button component!</button>
-    </div>
+      <button>
+        {propsTypes}
+      </button>
   );
 };
-
+//Button.PropTypes = propTypes;
 export default Button;
