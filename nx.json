@@ -28,6 +28,18 @@
     },
     "audioplayer-test-e2e": {
       "tags": []
+    },
+    "demo-max": {
+      "tags": []
+    },
+    "demo-max-e2e": {
+      "tags": []
+    },
+    "demo-yuhei": {
+      "tags": []
+    },
+    "demo-yuhei-e2e": {
+      "tags": []
     }
   }
 }
