@@ -11,7 +11,7 @@ export const App = () => {
    */
   return (
     <div className="app">
-      <Button type="button" className="btn btn-primary btn-lg">Large button</Button>
+      <Button type="button">Large button</Button>
       <Button color="gray">Sample Text</Button>
       <Button color="orage">Sample Text</Button>
       <Button>Sample Text</Button>

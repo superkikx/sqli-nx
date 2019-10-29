@@ -5,11 +5,11 @@ import propTypes from '../button/button.props';
 
 export const Button = (props) => {
 
-  const propsTypes = props.children;
+  const text = props.children;
   
   return (
       <button>
-        {propsTypes}
+        {text}
       </button>
   );
 };
