@@ -1,7 +1,8 @@
 import React from 'react'
 import './cover.scss';
 
-export const Cover = props => {
+export const Cover = (props) => {
+    
     const { coverImage, data } = props;
 
     const style = { backgroundImage: `url(${coverImage})`};

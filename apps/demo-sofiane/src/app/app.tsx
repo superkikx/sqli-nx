@@ -6,7 +6,7 @@ import "./app.css";
 export const App = () => {
   return (
     <div>
-      <MenuSofiane background={false} direction="horizontal" >
+      <MenuSofiane background={true} direction="vertical" >
         {[
           { label: 'Lien 1', action: 'http://google.fr' },
           { label: 'Lien 2', action: 'http://google.fr' },

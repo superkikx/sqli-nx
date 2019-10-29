@@ -15,7 +15,11 @@ const data = [
         {
             action:'https://tigerwoods.com/',
             label:'Tiger Woods'
-        }
+        },
+        {
+          action:()=>alert(123),
+          label:'Tiger Woods 2'
+      }
     ];
 
 

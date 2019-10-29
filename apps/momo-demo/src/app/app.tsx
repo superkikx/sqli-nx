@@ -7,7 +7,7 @@ export const App = () => {
         <div className="app">
             <Logo size="big"/>
             <Logo size="medium" />
-            <Logo size="small" />
+            <Logo size="medium" />
         </div>
 
 

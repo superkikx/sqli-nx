@@ -5,20 +5,27 @@ import "./autocomplete.css";
 
 export const Autocomplete = (props) => {
 
-const changeHandler = () => alert("hello");
+  const [input,setInput] = React.useState('');
 
-const changeHandler2 = evt => {
-console.log(evt);
- props.title ='test';
-}
+  const changeHandler = evt => {
+    // console.log(evt.target.value);
+    setInput(evt.target.value);
+  }
 
   return (
     <React-Fragment>
       <h1>Welcome to autocomplete component!</h1>
 
         <div className="md-form">
-         <input type="search" id="form-autocomplete" className="form-control mdb-autocomplete" onChange={changeHandler} />
-         <label for="form-autocomplete" className="active">What is your favorite US state? {props.data}</label>
+         <input type="search" 
+          id="form-autocomplete"
+          className="form-control mdb-autocomplete"
+          value={input}
+          onChange={changeHandler} 
+          placeholder={props.placeholder}/>
+          <div>
+          {input && props.data.filter( value => value.startsWith(input)).map( (value,num) => <div key={num} onClick={ ()=> setInput(value) }>{value}<hr/></div>)}
+          </div>
         </div>
 
     </React-Fragment>
