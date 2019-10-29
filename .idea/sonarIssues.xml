@@ -3,6 +3,21 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/apps/audioplayer-test/src/app/app.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/index.ts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/lib/Menu/menu-sofiane.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/libs/gui/src/lib/audio-player.tsx">
           <value>
             <set />
@@ -13,7 +28,37 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/lib/audioplayer/audio-player.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/libs/gui/src/lib/audioplayer/audio-player.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/lib/audioplayer/cover/cover.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/lib/audioplayer/cover/cover.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/lib/audioplayer/list/list.scss">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/lib/audioplayer/list/list.tsx">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/libs/gui/src/lib/audioplayer/pl.json">
           <value>
             <set />
           </value>
