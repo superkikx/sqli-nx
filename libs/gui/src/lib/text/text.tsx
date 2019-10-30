@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./text.css";
+import './text.css';
 
 /**
  *  <Text>
@@ -16,30 +16,33 @@ import "./text.css";
       </Text>
  * @param props 
  */
-export const Text = (props) => {
+export const Text = props => {
+  const { reversed, imageSrc, title, content, href, ctaTitle } = props.children;
 
-  const {reversed , imageSrc , title, content , href , ctaTitle} = props.children ;
-  
   return (
     <section>
-      <div className={"card 1 flip-card " + (reversed && 'reversed')}>
+      <div className={'card 1 flip-card ' + (reversed && 'reversed')}>
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <div className="card_image"> 
-              <img src={ imageSrc || "https://i.redd.it/b3esnz5ra34y.jpg" } />
+            <div className="card_image">
+              <img src={imageSrc || 'https://i.redd.it/b3esnz5ra34y.jpg'} />
             </div>
             <div className="card_title title-white">
-              { title && <p>{title}</p> }
+              {title && <p>{title}</p>}
             </div>
           </div>
           <div className="flip-card-back">
-              {
-                content && 
-                <p>
+            {content && (
+              <p>
                 {content}
-                { href && <a href={href}> {ctaTitle}</a>}
-                </p>
-            }
+                {/* href && <a href={href}> {ctaTitle}</a> */}
+                { href && typeof href === 'string' ? (
+                  <a href={href}>{ctaTitle}</a>
+                ) : (
+                  <a onClick={() => href(props)}>{ctaTitle}</a>
+                )}
+              </p>
+            )}
           </div>
         </div>
       </div>

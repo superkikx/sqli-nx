@@ -9,11 +9,30 @@ import "./audio-player.scss";
 
 /* eslint-disable-next-line */
 export interface AudioPlayerProps {
-    src: string
+    tracks:[
+        {
+            "id":number;
+            "album": {
+              "id": string;
+              "image": string;
+              "name": string;
+            },
+            "title": string;
+            "artists": string[];
+            "duration": number;
+            "href": string;
+            "name": string;
+            "preview":string;
+          }
+    ]
 }
 
 export const AudioPlayer = (props: AudioPlayerProps) => {
-    const [src, setSrc] = useState();
+    
+    const [src, setSrc] = React.useState( 
+        (props.tracks.length && [props.tracks[0].preview])|| null
+        );
+        
     const [play, setPlay] = useState(false);
     const [currentSong, setCurrentSong] = useState();
 
