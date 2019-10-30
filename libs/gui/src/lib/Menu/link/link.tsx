@@ -3,10 +3,18 @@ import "./link.css";
 
 export const Link = props => {
 
+
   return (
-    <a href={props.action} className="navigation-link">
-      {props.label}
-    </a>
+    <>
+    {
+      (typeof props.action==='string')
+      ?
+      <a href={props.action} className="navigation-link">{props.label}</a>
+      :
+      <a onClick={ ()=> props.action(props)} className="navigation-link">{props.label}</a>
+    }
+     </>
+
   )
 };
 
