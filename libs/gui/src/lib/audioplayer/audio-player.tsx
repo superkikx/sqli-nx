@@ -71,7 +71,7 @@ export const AudioPlayer = (props: AudioPlayerProps) => {
 };
 
 AudioPlayer.defaultProps = {
-    src: ""
+    tracks: []
 };
 
 AudioPlayer.propTypes = PropTypes;
