@@ -69,6 +69,9 @@ import {
       reversed:false
     });
 
+    const searchHandler = data => {
+      console.log(data);
+    };
 
     return (
       <div className="app col">
@@ -97,10 +100,13 @@ import {
               trail={trail}
             ></BreadcrumbSqli>
             <div className="pad">
+              
               <Autocomplete
                 placeholder="Type Your Favorite Music Name"
-                data={['Test']}
+                action={searchHandler}
+                data={ tracks.map( track => track.name )}
               />
+
               <Button>Validate</Button>
             </div>
             <div className="pad wrap slide">
