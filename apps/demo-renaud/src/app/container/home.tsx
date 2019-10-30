@@ -7,7 +7,8 @@ import {
     AudioPlayer,
     BreadcrumbSqli,
     Autocomplete,
-    Text
+    Text,
+    Button
   } from '@sqli/gui';
   
   import '../app.css';
@@ -15,6 +16,7 @@ import {
   export const Home = ({store}) => {
 
     const [loaded, setLoaded] = React.useState(false);
+    const [trail, setTrail] = React.useState([]);
     const [tracks, setTracks] = React.useState([]);
     const [users, setUsers] = React.useState([]);
 
@@ -54,6 +56,19 @@ import {
       console.log('fromCard',data);
     };
 
+    const mapTrackToTExt = track => ({
+      title: track.name,
+      content: `
+      Name : ${track.name}
+      Album : ${track.album.name}
+      Duration: ${track.duration} seconds.
+      `,
+      imageSrc: track.album.image,
+      href:trackCardHandler,
+      ctaTitle:<Button>'Listen'</Button>,
+      reversed:false
+    });
+
 
     return (
       <div className="app col">
@@ -79,17 +94,7 @@ import {
   
           <div className="col">
             <BreadcrumbSqli
-              trail={[
-                { label: 'Yuhei', action: '' },
-                { label: 'Sullivan', action: '' },
-                { label: 'Sofiane', action: '' },
-                { label: 'AbdelJallil', action: '' },
-                { label: 'Mohamed', action: '' },
-                { label: 'Max', action: '' },
-                { label: 'Khalid', action: '' },
-                { label: 'Khalil', action: '' },
-                { label: 'Renaud', action: '' }
-              ]}
+              trail={trail}
             ></BreadcrumbSqli>
             <div className="pad">
               <Autocomplete
@@ -98,19 +103,9 @@ import {
               />
             </div>
             <div className="pad wrap slide">
-              <div className="pad">
-                <Text>
-                  {{
-                    title: 'In Code We Trust',
-                    content:
-                      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                    imageSrc: 'http://unsplash.it/300?' + Math.random(),
-                    href:trackCardHandler,
-                    ctaTitle:'Listen',
-                    reversed:false
-                  }}
-                </Text>
-              </div>
+              {
+                tracks.map( (track,num) => <div className="pad" key={num}><Text>{mapTrackToTExt(track)}</Text></div>)
+              }
             </div>
           </div>
         </div>
