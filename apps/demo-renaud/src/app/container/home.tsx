@@ -7,14 +7,19 @@ import {
     AudioPlayer,
     BreadcrumbSqli,
     Autocomplete,
-    Text
+    Text,
+    Button
   } from '@sqli/gui';
   
   import '../app.css';
   
   export const Home = ({store}) => {
 
-    //console.table(store)
+    const [loaded, setLoaded] = React.useState(false);
+    const [trail, setTrail] = React.useState([]);
+    const [tracks, setTracks] = React.useState([]);
+    const [users, setUsers] = React.useState([]);
+
 
     // Acces fonctionnel au LifeCycle
     React.useEffect( () => {
@@ -22,13 +27,47 @@ import {
       const requestUser = new store.Action(store.ActionTypes.USER_GET_LIST, null);
       const requestTrack = new store.Action(store.ActionTypes.TRACK_GET_LIST, null);
 
-      store.dispatch(requestUser);
-      store.dispatch(requestTrack);
+      store.dispatch(requestUser).then( data => { 
+        console.table(data)
+        return data;
+      }).then( setUsers )
+
+      store.dispatch(requestTrack).then( data => {
+        console.table(data)
+        return data
+      } ).then( setTracks )
 
       //cleanup a faire sur le unmount
       return ()=> console.log('Bye bye');
 
-    },[]);
+    },[loaded]);
+
+    // Navigation Verticale
+    const navigate = data => {
+      console.log(data);
+    };
+    const routes = [
+      { label: 'Home', action: navigate },
+      { label: 'Search', action: navigate },
+      { label: 'Login', action: navigate }
+    ];
+
+    const trackCardHandler = data => {
+      console.log('fromCard',data);
+    };
+
+    const mapTrackToTExt = track => ({
+      title: track.name,
+      content: `
+      Name : ${track.name}
+      Album : ${track.album.name}
+      Duration: ${track.duration} seconds.
+      `,
+      imageSrc: track.album.image,
+      href:trackCardHandler,
+      ctaTitle:<Button>'Listen'</Button>,
+      reversed:false
+    });
 
 
     return (
@@ -37,13 +76,9 @@ import {
         <div className="col">
           <Logo />
           <MenuSofiane background="true">{[]}</MenuSofiane>
-          <MenuSofiane>
-            {[
-              { label: 'Home', action: '' },
-              { label: 'Search', action: '' },
-              { label: 'Login', action: '' }
-            ]}
-          </MenuSofiane>
+
+          <MenuSofiane>{ routes }</MenuSofiane>
+
           <MenuSofiane background="true">{[]}</MenuSofiane>
         </div>
   
@@ -53,33 +88,13 @@ import {
             <AudioPlayer />
   
             <MenuSofiane direction="vertical">
-              {[
-                { label: 'Yuhei', action: '' },
-                { label: 'Sullivan', action: '' },
-                { label: 'Sofiane', action: '' },
-                { label: 'AbdelJallil', action: '' },
-                { label: 'Mohamed', action: '' },
-                { label: 'Max', action: '' },
-                { label: 'Khalid', action: '' },
-                { label: 'Khalil', action: '' },
-                { label: 'Renaud', action: '' }
-              ]}
+              { users.map( users => ({label:users.name})) }
             </MenuSofiane>
           </div>
   
           <div className="col">
             <BreadcrumbSqli
-              trail={[
-                { label: 'Yuhei', action: '' },
-                { label: 'Sullivan', action: '' },
-                { label: 'Sofiane', action: '' },
-                { label: 'AbdelJallil', action: '' },
-                { label: 'Mohamed', action: '' },
-                { label: 'Max', action: '' },
-                { label: 'Khalid', action: '' },
-                { label: 'Khalil', action: '' },
-                { label: 'Renaud', action: '' }
-              ]}
+              trail={trail}
             ></BreadcrumbSqli>
             <div className="pad">
               <Autocomplete
@@ -88,17 +103,9 @@ import {
               />
             </div>
             <div className="pad wrap slide">
-              <div className="pad">
-                <Text>
-                  {{
-                    title: 'In Code We Trust',
-                    content:
-                      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                    imageSrc: 'http://unsplash.it/300?' + Math.random(),
-                    reversed:true
-                  }}
-                </Text>
-              </div>
+              {
+                tracks.map( (track,num) => <div className="pad" key={num}><Text>{mapTrackToTExt(track)}</Text></div>)
+              }
             </div>
           </div>
         </div>
