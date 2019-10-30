@@ -1,24 +1,31 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 import './list.scss';
 
 export const List = props => {
-    const { items } = props;
-    const [isCurrent, setIsCurrent] = useState('');
-    const tracks = [];
+ 
+  const { tracks } = props;
+  const [isCurrent, setIsCurrent] = useState('');
 
-    items.map(x => tracks.push(x));
 
-    const handlePreview = (x) => {
-        props.playPreview(x.preview_url);
-        setIsCurrent(x);
-    };
+  const handlePreview = x => {
+    props.playPreview(x.preview);
+    setIsCurrent(x);
+  };
 
-    return (
-        <ul className="playlist">
-            { tracks.map((x, i) => <li className={ isCurrent === x ? 'current' : '' } 
-                                        onClick={ () => {handlePreview(x); props.retrieveName(x.name) }} key={ i }>
-                                        { x.name }
-                                        </li>)}
-        </ul>
-    )
+  return (
+    <ul className="playlist">
+      {tracks.map((x, i) => (
+        <li
+          className={isCurrent === x ? 'current' : ''}
+          onClick={() => {
+            handlePreview(x);
+            props.retrieveName(x.name);
+          }}
+          key={i}
+        >
+          {x.name}
+        </li>
+      ))}
+    </ul>
+  );
 };

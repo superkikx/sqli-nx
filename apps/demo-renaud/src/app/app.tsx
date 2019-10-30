@@ -1,158 +1,46 @@
 import React from 'react';
 
-import {
-  Demo,
-  Logo,
-  MenuSofiane,
-  Footer,
-  AudioPlayer,
-  BreadcrumbSqli,
-  Autocomplete,
-  Text
-} from '@sqli/gui';
+import Home from './container/home';
 
-import './app.css';
+/* 
+import { Action, ActionTypes, dispatch } from './services/facade';
+const Store = { Action, ActionTypes, dispatch }; 
+*/
 
-export const App = () => {
-  return (
-    <div className="app col">
+import * as Store from './services/facade';
 
-      <div className="col">
-        <Logo />
-        <MenuSofiane background="true">{[]}</MenuSofiane>
-        <MenuSofiane>
-          {[
-            { label: 'Home', action: '' },
-            { label: 'Search', action: '' },
-            { label: 'Login', action: '' }
-          ]}
-        </MenuSofiane>
-        <MenuSofiane background="true">{[]}</MenuSofiane>
-      </div>
+export class App extends React.Component {
+  
+  constructor(props) {
+    super(props);
+    console.warn(1, 'App');
+  }
 
-      <div className="row">
+  //useEffect
+  componentDidMount() {
+    
+    console.warn(2, 'App');
 
-        <div className="col pad">
-          <AudioPlayer />
+    const action = new Store.Action( Store.ActionTypes.USER_GET_LIST, null );
+    Store.dispatch(action);
 
-          <MenuSofiane direction="vertical">
-            {[
-              { label: 'Yuhei', action: '' },
-              { label: 'Sullivan', action: '' },
-              { label: 'Sofiane', action: '' },
-              { label: 'AbdelJallil', action: '' },
-              { label: 'Mohamed', action: '' },
-              { label: 'Max', action: '' },
-              { label: 'Khalid', action: '' },
-              { label: 'Khalil', action: '' },
-              { label: 'Renaud', action: '' }
-            ]}
-          </MenuSofiane>
-        </div>
+  }
 
-        <div className="col">
-          <BreadcrumbSqli
-            trail={[
-              { label: 'Yuhei', action: '' },
-              { label: 'Sullivan', action: '' },
-              { label: 'Sofiane', action: '' },
-              { label: 'AbdelJallil', action: '' },
-              { label: 'Mohamed', action: '' },
-              { label: 'Max', action: '' },
-              { label: 'Khalid', action: '' },
-              { label: 'Khalil', action: '' },
-              { label: 'Renaud', action: '' }
-            ]}
-          ></BreadcrumbSqli>
-          <div className="pad">
-            <Autocomplete
-              placeholder="Type Your Favorite Music Name"
-              data={['Test']}
-            />
-          </div>
-          <div className="pad wrap slide">
-            <div className="pad">
-              <Text>
-                {{
-                  title: 'In Code We Trust',
-                  content:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                  imageSrc: 'http://unsplash.it/300?' + Math.random(),
-                  reversed:true
-                }}
-              </Text>
-            </div>
-            <div className="pad">
-              <Text>
-                {{
-                  title: 'In Code We Trust',
-                  content:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                  imageSrc: 'http://unsplash.it/300?' + Math.random()
-                }}
-              </Text>
-            </div>
-            <div className="pad">
-              <Text>
-                {{
-                  title: 'In Code We Trust',
-                  content:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                  imageSrc: 'http://unsplash.it/300?' + Math.random()
-                }}
-              </Text>
-            </div>
-            <div className="pad">
-              <Text>
-                {{
-                  title: 'In Code We Trust',
-                  content:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                  imageSrc: 'http://unsplash.it/300?' + Math.random()
-                }}
-              </Text>
-            </div>
-            <div className="pad">
-              <Text>
-                {{
-                  title: 'In Code We Trust',
-                  content:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                  imageSrc: 'http://unsplash.it/300?' + Math.random()
-                }}
-              </Text>
-            </div>
-            <div className="pad">
-              <Text>
-                {{
-                  title: 'In Code We Trust',
-                  content:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                  imageSrc: 'http://unsplash.it/300?' + Math.random()
-                }}
-              </Text>
-            </div>
-            <div className="pad">
-              <Text>
-                {{
-                  title: 'In Code We Trust',
-                  content:
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                  imageSrc: 'http://unsplash.it/300?' + Math.random()
-                }}
-              </Text>
-            </div>
-          </div>
-        </div>
-      </div>
+  componentDidUpdate() {
+    console.warn(3, 'App');
+  }
 
-      <Footer background="crimson">
-        <h1>
-          Welcome to <Logo size="small" />
-        </h1>
-      </Footer>
-    </div>
-  );
-};
+  componentWillUnmount() {
+    console.warn(4, 'App');
+  }
+
+  render() {
+    return (
+      <>
+        <Home store={Store}/>
+      </>
+    );
+  }
+}
 
 export default App;

@@ -1,22 +1,34 @@
 import React from "react";
 
-import "./app.css";
-import {Button} from '@sqli/gui'
+import Home from './container/home'
+import * as Store from './services/facade';
 
-export const App = () => {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./${fileName}.${style} file.
-   */
+import {Button, Logo, MenuSofiane, Footer, Autocomplete, AudioPlayer, Text} from '@sqli/gui'
+
+
+export class App extends React.Component{
+
+  constructor (props){
+    super(props);
+    console.warn(1,'App');
+  }
+  componentDidMount(){
+    console.warn(2,'App');
+    const action = new Store.Action(Store.ActionTypes.USER_GET_LIST, null);
+    Store.dispatch(action);
+  }
+  componentDidUpdate(){
+  console.warn(3,'App');
+  }
+  componentWillUnmount(){
+    console.warn(4,'App');
+    }
+render(){
   return (
-    <div className="app">
-      <Button type="button">Large button</Button>
-      <Button color="gray">Sample Text</Button>
-      <Button color="orage">Sample Text</Button>
-      <Button>Sample Text</Button>
-    </div>
+    <>
+    <Home store={Store}/>
+    </>
   );
-};
-
+}
+}
 export default App;

@@ -2,20 +2,39 @@ import React, { useState } from "react";
 import PropTypes from './audio-player.props';
 import { Cover } from "./cover/cover";
 import { List } from "./list/list";
-import data from './pl.json';
+//import data from './pl.json';
 
 import "./audio-player.scss";
 
 
 /* eslint-disable-next-line */
 export interface AudioPlayerProps {
-    src: string
+    tracks:[
+        {
+            "id":number;
+            "album": {
+              "id": string;
+              "image": string;
+              "name": string;
+            },
+            "title": string;
+            "artists": string[];
+            "duration": number;
+            "href": string;
+            "name": string;
+            "preview":string;
+          }
+    ]
 }
 
 export const AudioPlayer = (props: AudioPlayerProps) => {
-    const [src, setSrc] = useState();
+    
+    const [src, setSrc] = React.useState( 
+        (props.tracks && props.tracks.length && [props.tracks[0].preview])|| null
+        );
+
     const [play, setPlay] = useState(false);
-    const [currentSong, setCurrentSong] = useState();
+    const [currentSong, setCurrentSong] = useState( props.tracks && props.tracks.length && props.tracks[0] || null);
 
     const audioElement = React.createRef();
 
@@ -36,7 +55,7 @@ export const AudioPlayer = (props: AudioPlayerProps) => {
     return (
         <div className={ 'audioWrapper' }>
 
-            <Cover playPreview={ handlePlayer } data={ data.tracks } coverImage={ "https://i.scdn.co/image/ab67616d0000b273f9d64ac5b0e042252e3a561a" }/>
+            <Cover playPreview={ handlePlayer } track={currentSong}/>
 
             <div className='playerWrapper'>
                 <audio src={ src } controls ref={ audioElement }/>
@@ -45,14 +64,14 @@ export const AudioPlayer = (props: AudioPlayerProps) => {
 
             <hr />
 
-            <List retrieveName={ name => setCurrentSong(name) } items={ data.tracks } playPreview={ (preview: any) => handlePreview(preview) }/>
+            <List retrieveName={ name => setCurrentSong(name) } tracks={ props.tracks } playPreview={ (preview: any) => handlePreview(preview) }/>
             
         </div>
     );
 };
 
 AudioPlayer.defaultProps = {
-    src: ""
+    tracks: []
 };
 
 AudioPlayer.propTypes = PropTypes;

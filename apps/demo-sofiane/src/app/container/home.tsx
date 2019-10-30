@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
     Logo,
     MenuSofiane,
@@ -8,10 +10,9 @@ import {
     Text
   } from '@sqli/gui';
   
-  import './app.css';
-import React from 'react';
+  import '../app.css';
   
-  export const App = () => {
+  export const Home = () => {
     return (
       <div className="app col">
   
@@ -153,4 +154,4 @@ import React from 'react';
     );
   };
   
-  export default App;
+  export default Home;
