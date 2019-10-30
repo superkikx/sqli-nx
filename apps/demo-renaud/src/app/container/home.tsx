@@ -19,6 +19,7 @@ import {
     const [trail, setTrail] = React.useState([]);
     const [tracks, setTracks] = React.useState([]);
     const [users, setUsers] = React.useState([]);
+    const [search, setSearch] = React.useState('');
 
 
     // Acces fonctionnel au LifeCycle
@@ -70,7 +71,7 @@ import {
     });
 
     const searchHandler = data => {
-      console.log(data);
+      setSearch(data);
     };
 
     return (
@@ -102,16 +103,17 @@ import {
             <div className="pad">
               
               <Autocomplete
+                input={search}
                 placeholder="Type Your Favorite Music Name"
                 action={searchHandler}
                 data={ tracks.map( track => track.name )}
               />
 
-              <Button>Validate</Button>
+              <Button action={()=>setSearch('')}>Reset</Button>
             </div>
             <div className="pad wrap slide">
               {
-                tracks.map( (track,num) => <div className="pad" key={num}><Text>{mapTrackToTExt(track)}</Text></div>)
+                tracks.filter( track => (!search) || track.name === search ).map( (track,num) => <div className="pad" key={num}><Text>{mapTrackToTExt(track)}</Text></div>)
               }
             </div>
           </div>
