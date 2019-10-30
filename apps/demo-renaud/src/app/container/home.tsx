@@ -12,7 +12,25 @@ import {
   
   import '../app.css';
   
-  export const Home = () => {
+  export const Home = ({store}) => {
+
+    //console.table(store)
+
+    // Acces fonctionnel au LifeCycle
+    React.useEffect( () => {
+
+      const requestUser = new store.Action(store.ActionTypes.USER_GET_LIST, null);
+      const requestTrack = new store.Action(store.ActionTypes.TRACK_GET_LIST, null);
+
+      store.dispatch(requestUser);
+      store.dispatch(requestTrack);
+
+      //cleanup a faire sur le unmount
+      return ()=> console.log('Bye bye');
+
+    },[]);
+
+
     return (
       <div className="app col">
   
@@ -78,66 +96,6 @@ import {
                       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
                     imageSrc: 'http://unsplash.it/300?' + Math.random(),
                     reversed:true
-                  }}
-                </Text>
-              </div>
-              <div className="pad">
-                <Text>
-                  {{
-                    title: 'In Code We Trust',
-                    content:
-                      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                    imageSrc: 'http://unsplash.it/300?' + Math.random()
-                  }}
-                </Text>
-              </div>
-              <div className="pad">
-                <Text>
-                  {{
-                    title: 'In Code We Trust',
-                    content:
-                      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                    imageSrc: 'http://unsplash.it/300?' + Math.random()
-                  }}
-                </Text>
-              </div>
-              <div className="pad">
-                <Text>
-                  {{
-                    title: 'In Code We Trust',
-                    content:
-                      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                    imageSrc: 'http://unsplash.it/300?' + Math.random()
-                  }}
-                </Text>
-              </div>
-              <div className="pad">
-                <Text>
-                  {{
-                    title: 'In Code We Trust',
-                    content:
-                      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                    imageSrc: 'http://unsplash.it/300?' + Math.random()
-                  }}
-                </Text>
-              </div>
-              <div className="pad">
-                <Text>
-                  {{
-                    title: 'In Code We Trust',
-                    content:
-                      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                    imageSrc: 'http://unsplash.it/300?' + Math.random()
-                  }}
-                </Text>
-              </div>
-              <div className="pad">
-                <Text>
-                  {{
-                    title: 'In Code We Trust',
-                    content:
-                      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium, ad perferendis ducimus, quas nostrum quibusdam provident doloremque illo aspernatur beatae non, expedita libero omnis eaque error mollitia aliquam quia!',
-                    imageSrc: 'http://unsplash.it/300?' + Math.random()
                   }}
                 </Text>
               </div>
