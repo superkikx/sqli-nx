@@ -12,7 +12,7 @@ export const Autocomplete = (props) => {
   }
 
   return (
-    <React-Fragment>
+    <React.Fragment>
       <h1>Welcome to autocomplete component!</h1>
 
         <div className="md-form">
@@ -28,7 +28,7 @@ export const Autocomplete = (props) => {
           </div>
         </div>
 
-    </React-Fragment>
+    </React.Fragment>
   );
 };
 
