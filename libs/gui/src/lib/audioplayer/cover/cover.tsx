@@ -1,11 +1,10 @@
 import React from 'react'
 import './cover.scss';
 
-export const Cover = (props) => {
+export const Cover = ({track}) => {
     
-    const { coverImage, data } = props;
 
-    const style = { backgroundImage: `url(${coverImage})`};
+    const style = { backgroundImage: `url(${track.album.image})`};
 
     return (
         <div className="mainWrapper">
@@ -20,8 +19,8 @@ export const Cover = (props) => {
                 </button>
             </div>
             <div className='rightContainer'>
-                <h3>Album: { data[0].album.name }</h3>
-                <div>by { data[0].artists[0].name }</div>
+                <h3>Album: { track.album.name }</h3>
+                <div>by { track.artists.reduce( (start, art )=> start+'-'+ art.name,'') }</div>
             </div>
         </div>
     )
