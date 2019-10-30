@@ -30,7 +30,7 @@ export interface AudioPlayerProps {
 export const AudioPlayer = (props: AudioPlayerProps) => {
     
     const [src, setSrc] = React.useState( 
-        (props.tracks && props.tracks.length && [props.tracks[0].preview])|| null
+        (props.tracks && props.tracks.length && props.tracks[0].preview)|| null
         );
 
     const [play, setPlay] = useState(false);
