@@ -1,3 +1,5 @@
+import {engine} from './logic';
+
 export const ActionTypes = {
   TRACK_GET_LIST: 'TRACK_GET_LIST',
   TRACK_SEARCH: 'TRACK_SEARCH',
@@ -18,4 +20,5 @@ export class Action {
 export const dispatch = action => {
   if (action.constructor !== Action) throw 'Invalid Action';
   console.log(action);
+  return engine(action);
 };
