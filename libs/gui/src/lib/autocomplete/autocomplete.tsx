@@ -13,7 +13,8 @@ export const Autocomplete = (props) => {
 
   return (
     <React.Fragment>
-      <h1>Welcome to autocomplete component!</h1>
+      
+        <h1>Type in you serach:</h1>
 
         <div className="md-form">
          <input type="search" 
