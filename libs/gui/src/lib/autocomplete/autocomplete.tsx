@@ -23,11 +23,12 @@ export const Autocomplete = (props) => {
           value={input}
           onChange={changeHandler} 
           placeholder={props.placeholder}
-          onBlur={ () => (typeof props.action === 'function') && props.action(input) }/>
+          />
           <div>
           {input && props.data.filter( value => value.startsWith(input)).map( (value,num) => <div key={num} onClick={ ()=> {
+            
+            (typeof props.action === 'function') && props.action(value)
             setInput(value); 
-            (typeof props.action === 'function') && props.action(input)
           }}>{value}<hr/></div>)}
           </div>
         </div>
