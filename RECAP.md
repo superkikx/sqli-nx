@@ -12,7 +12,7 @@ Un composant (peut-étre) une brique de `User Interface` réutilisable:
 
 # React Outils :
 
-* Angular Console
+* Angular Console 🦸
 * React Devtools
 * NPM
 * VS Code
@@ -30,6 +30,14 @@ Une application ou site web peute découpée (composée) en ensemble de composan
 
 * C'est un dossier
 * Un environnement de mutualisation (node_modules, libs, apps) etc...
+
+```
+
+npx create-nx-workspace NAME
+
+```
+
+> Ou name devient le namespace
 
 ## Application Structure
 
@@ -77,3 +85,65 @@ export default PascalName;
 
 * `MyComponent.defaultProps`
 * `MyComponent.propTypes`
+
+### Composants et Ref:
+
+> Une `ref` est un espace de référence (conateneur) pour un element a rendre dans le futur par React
+
+* Element HTML
+* Component (uniquement sous forme de `class`)
+
+
+```jsx
+import React from 'react';
+
+const WithRef = props => {
+
+    const willBeReferencedHere = React.createRef();
+
+    return (
+        <>
+            <input ref={willBeReferencedHere}>
+        </>
+    );
+}
+
+```
+
+
+### Composants et Best Practices:
+
+* `propTypes` surtout pour les libs
+* `defaultProps`
+
+### Composants et Iteration:
+
+> Penser a rensiegner la `key` unique d'optimisation
+
+```jsx
+import React from 'react';
+
+const List = props => {
+
+    const namesList = ['Bill'. 'Bob', 'Ben']
+
+    return (
+        <ul>
+            {namesList.map( (name,num)=> <li key={num}>{name}</li>)}
+        </ul>
+    );
+}
+
+```
+
+### Composants et Hooks:
+
+**Que dans les fonctions**
+
+* `const [name,setName] = React.useState(/* initialValue*/)`
+
+> Ou `name` store la valeur et `setName` en permet la modification et entraine le **rendu** du composant.
+
+* `useEffect`
+* `useMemo`
+* `useReducer`
