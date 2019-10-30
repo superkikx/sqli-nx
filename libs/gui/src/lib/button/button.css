@@ -1,5 +1,5 @@
 
-.index-homepage .simplified .btn.btn-simplified{ -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+button{ -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 -webkit-box-direction: normal;
 direction: ltr;
 font-family: Circular, Helvetica, Arial, sans-serif;
@@ -18,7 +18,7 @@ transition-property: background-color, border-color, color, box-shadow, filter, 
 user-select: none;
 vertical-align: middle;
 transform: translate3d(0px, 0px, 0px);
-background-color: rgb(29, 185, 84);
+background-color: rgb(50, 105, 141);
 border-width: 0px;
 border-style: initial;
 border-color: initial;

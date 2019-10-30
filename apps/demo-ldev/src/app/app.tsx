@@ -1,58 +1,34 @@
 import React from "react";
 
-import "./app.css";
+import Home from './container/home'
+import * as Store from './services/facade';
 
 import {Button, Logo, MenuSofiane, Footer, Autocomplete, AudioPlayer, Text} from '@sqli/gui'
-import { link } from 'fs';
 
-export const App = () => {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./${fileName}.${style} file.
-   */
 
-    function sayHello() {
-    alert('ça fonctionne !');
-   
+export class App extends React.Component{
+
+  constructor (props){
+    super(props);
+    console.warn(1,'App');
   }
+  componentDidMount(){
+    console.warn(2,'App');
+    const action = new Store.Action(Store.ActionTypes.USER_GET_LIST, null);
+    Store.dispatch(action);
+  }
+  componentDidUpdate(){
+  console.warn(3,'App');
+  }
+  componentWillUnmount(){
+    console.warn(4,'App');
+    }
+render(){
   return (
-    <div className="app">
-      <Logo size="small"/>  
-      
-      <MenuSofiane direction ="horizontal">
-                {[
-                   { label: 'Lien 1', action: 'http://google.fr' },
-                   { label: 'Lien 2', action: 'http://google.fr' },
-                   { label: 'Lien 3', action: 'http://google.fr' },
-                   { label: 'Lien 4', action: 'http://google.fr' }
-               ]}
-      </MenuSofiane>
-      <Button>
-                  <a href="https://www.google.fr/" id="generic-btn-premium" role="button" data-tracking="{&quot;category&quot;: &quot;home (offer)&quot;, &quot;action&quot;: &quot;premium&quot;}" className="btn btn-green btn-simplified js-goto-signup js-button-hero-get-free">
-            Mon Button 
-                   </a>
-      </Button>
-          <button onClick={sayHello} >Mybutton</button>
-    
-      <Autocomplete />
-      <Text>
-        {{
-          title: "Fishipedia",
-          subtitle: "L'encylopédie du monde aquatique",
-          href: "https://www.fishipedia.fr/",
-          ctaTitle: "visiter le site",
-          content: '“Fishipedia.fr - 1er site encyclopédique dédié aux poissons et aux passions associées : Plongée, Snorkeling, Aquariophilie, Pêche.”',
-          imageSrc: 'https://www.fishipedia.fr/wp-content/themes/fishipedia/css/img/home/thematics/fishes.jpg',
-          reversed: false
-        }}
-      </Text>
-      <AudioPlayer/>
-     
-      <Footer/>
-      
-    </div>
+    <>
+    <Home store={Store}/>
+    </>
   );
-};
-
+}
+}
 export default App;
