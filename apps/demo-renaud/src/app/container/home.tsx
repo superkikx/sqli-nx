@@ -20,7 +20,7 @@ import {
     const [tracks, setTracks] = React.useState([]);
     const [users, setUsers] = React.useState([]);
     const [search, setSearch] = React.useState('');
-    const [currentTrack, setCurrentTrack] = React.useState(null);
+    const [currentTrack, setCurrentTrack] = React.useState();
 
 
     // Acces fonctionnel au LifeCycle
@@ -56,7 +56,7 @@ import {
 
     const trackCardHandler = data => {
       // console.log('fromCard',data.children.$ref);
-      setCurrentTrack(data.children.$ref)
+      setCurrentTrack(data.children.$ref);
     };
 
     const mapTrackToTExt = track => ({
@@ -92,7 +92,7 @@ import {
         <div className="row">
   
           <div className="col pad">
-            <AudioPlayer />
+          <AudioPlayer tracks={[currentTrack]}/>
   
             <MenuSofiane direction="vertical">
               { users.map( users => ({label:users.name})) }
