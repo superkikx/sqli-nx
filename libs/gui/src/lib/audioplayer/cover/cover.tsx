@@ -3,8 +3,7 @@ import './cover.scss';
 
 export const Cover = ({track}) => {
     
-
-    const style = { backgroundImage: `url(${track.album.image})`};
+    const style = { backgroundImage: `url(${track && track.album && track.album.image})`};
 
     return (
         <div className="mainWrapper">
@@ -19,8 +18,8 @@ export const Cover = ({track}) => {
                 </button>
             </div>
             <div className='rightContainer'>
-                <h3>Album: { track.album.name }</h3>
-                <div>by { track.artists.reduce( (start, art )=> start+'-'+ art.name,'') }</div>
+                <h3>Album: { track && track.album && track.album.name }</h3>
+                <div>by { track && track.artists && track.artists.reduce( (start, art )=> start+'-'+ art.name,'') }</div>
             </div>
         </div>
     )
