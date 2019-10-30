@@ -1,7 +1,9 @@
 import React from 'react'
 import './cover.scss';
 
-export const Cover = ({track}) => {
+export const Cover = (props) => {
+
+    const {track} = props;
     
     const style = { backgroundImage: `url(${track && track.album && track.album.image})`};
 

@@ -28,10 +28,10 @@ export interface AudioPlayerProps {
 }
 
 export const AudioPlayer = (props: AudioPlayerProps) => {
-    
-    const [src, setSrc] = React.useState( 
-        (props.tracks && props.tracks.length && props.tracks[0].preview)|| null
-        );
+
+
+    const initialSrc =  (props.tracks && props.tracks.length  && props.tracks[0] && props.tracks[0].preview)|| null;
+    const [src, setSrc] = React.useState(initialSrc);
 
     const [play, setPlay] = useState(false);
     const [currentSong, setCurrentSong] = useState( props.tracks && props.tracks.length && props.tracks[0] || null);
@@ -55,16 +55,18 @@ export const AudioPlayer = (props: AudioPlayerProps) => {
     return (
         <div className={ 'audioWrapper' }>
 
-            <Cover playPreview={ handlePlayer } track={currentSong}/>
+            <Cover playPreview={ handlePlayer } track={props.tracks[0]}/>
 
             <div className='playerWrapper'>
-                <audio src={ src } controls ref={ audioElement }/>
+                <audio src={ props.tracks[0] && props.tracks[0].preview } controls ref={ audioElement }/>
                 <div>{ currentSong && currentSong }</div>
             </div>
 
             <hr />
-
+        {
+            (props.tracks && props.tracks.length  && props.tracks[0]) &&
             <List retrieveName={ name => setCurrentSong(name) } tracks={ props.tracks } playPreview={ (preview: any) => handlePreview(preview) }/>
+        }
             
         </div>
     );
