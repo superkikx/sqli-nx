@@ -39,13 +39,20 @@ React.useEffect( ()  => {
     const requestUser =  new store.Action(store.ActionTypes.USER_GET_LIST,null);
     const requestTrack =  new store.Action(store.ActionTypes.TRACK_GET_LIST,null);
 
-    store.dispatch(requestUser);
-    store.dispatch(requestTrack);
+//show les data
+    store.dispatch(requestUser).then(users => console.table(users));
+    store.dispatch(requestTrack).then(tracks => console.table(tracks));
 
     return ()=> console.log('bye bye');
 },[]);
 
+//Navigation
 const navigate = data => {
+    console.log(data);
+}
+
+
+const getNamePicture = data => {
     console.log(data);
 }
 
@@ -88,7 +95,7 @@ const navigate = data => {
                      {{
                        title: "Fishipedia",
                        subtitle: "L'encylopédie du monde aquatique",
-                       href: "https://www.fishipedia.fr/",
+                       href: getNamePicture,
                        ctaTitle: "visiter le site",
                        content: '“Fishipedia.fr - 1er site encyclopédique dédié aux poissons et aux passions associées : Plongée, Snorkeling, Aquariophilie, Pêche.”',
                        imageSrc: 'https://www.fishipedia.fr/wp-content/themes/fishipedia/css/img/home/thematics/fishes.jpg',
