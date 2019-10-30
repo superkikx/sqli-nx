@@ -9,10 +9,10 @@ export const BreadcrumbSqli = props => {
         {props.trail &&
           props.trail.map((link, indice) => (
             <li className="list-item" key={indice}>
-              {typeof props.action === 'string' ? (
-                <a href={props.action}>{props.label}</a>
+              {typeof link.action === 'string' ? (
+                <a href={link.action}>{link.label}</a>
               ) : (
-                <a onClick={() => props.action(props)}>{props.label}</a>
+                <a onClick={() => link.action(props)}>{link.label}</a>
               )}
             </li>
           ))}
