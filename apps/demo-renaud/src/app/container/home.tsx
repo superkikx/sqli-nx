@@ -65,7 +65,7 @@ import {
       `,
       imageSrc: track.album.image,
       href:trackCardHandler,
-      ctaTitle:<Button>'Listen'</Button>,
+      ctaTitle:<Button><h1>♬ Listen</h1></Button>,
       reversed:false
     });
 
@@ -101,6 +101,7 @@ import {
                 placeholder="Type Your Favorite Music Name"
                 data={['Test']}
               />
+              <Button>Validate</Button>
             </div>
             <div className="pad wrap slide">
               {
