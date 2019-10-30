@@ -34,7 +34,7 @@ export const AudioPlayer = (props: AudioPlayerProps) => {
         );
 
     const [play, setPlay] = useState(false);
-    const [currentSong, setCurrentSong] = useState();
+    const [currentSong, setCurrentSong] = useState( props.tracks && props.tracks.length && props.tracks[0] || null);
 
     const audioElement = React.createRef();
 
@@ -55,7 +55,7 @@ export const AudioPlayer = (props: AudioPlayerProps) => {
     return (
         <div className={ 'audioWrapper' }>
 
-            <Cover playPreview={ handlePlayer } data={ props.tracks } coverImage={ "https://i.scdn.co/image/ab67616d0000b273f9d64ac5b0e042252e3a561a" }/>
+            <Cover playPreview={ handlePlayer } track={currentSong}/>
 
             <div className='playerWrapper'>
                 <audio src={ src } controls ref={ audioElement }/>
@@ -64,7 +64,7 @@ export const AudioPlayer = (props: AudioPlayerProps) => {
 
             <hr />
 
-            <List retrieveName={ name => setCurrentSong(name) } items={ props.tracks } playPreview={ (preview: any) => handlePreview(preview) }/>
+            <List retrieveName={ name => setCurrentSong(name) } tracks={ props.tracks } playPreview={ (preview: any) => handlePreview(preview) }/>
             
         </div>
     );
