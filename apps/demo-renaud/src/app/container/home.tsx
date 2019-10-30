@@ -20,6 +20,7 @@ import {
     const [tracks, setTracks] = React.useState([]);
     const [users, setUsers] = React.useState([]);
     const [search, setSearch] = React.useState('');
+    const [currentTrack, setCurrentTrack] = React.useState(null);
 
 
     // Acces fonctionnel au LifeCycle
@@ -54,10 +55,12 @@ import {
     ];
 
     const trackCardHandler = data => {
-      console.log('fromCard',data);
+      // console.log('fromCard',data.children.$ref);
+      setCurrentTrack(data.children.$ref)
     };
 
     const mapTrackToTExt = track => ({
+      $ref:track,
       title: track.name,
       content: `
       Name : ${track.name}
@@ -67,7 +70,7 @@ import {
       imageSrc: track.album.image,
       href:trackCardHandler,
       ctaTitle:<Button><h1>♬ Listen</h1></Button>,
-      reversed:false
+      reversed: track === currentTrack
     });
 
     const searchHandler = data => {
@@ -109,7 +112,7 @@ import {
                 data={ tracks.map( track => track.name )}
               />
 
-              <Button action={()=>setSearch('')}>Reset</Button>
+              <Button action={()=>setSearch('')}>Show All</Button>
             </div>
             <div className="pad wrap slide">
               {
