@@ -6,10 +6,12 @@ import propTypes from '../button/button.props';
 export const Button = (props) => {
 
   const text = props.children;
-  
+
   return (
       <button onClick={props.action}>
-        {text}
+          <p>
+              {text}
+          </p>
       </button>
   );
 };

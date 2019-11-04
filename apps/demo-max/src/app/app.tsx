@@ -1,35 +1,32 @@
-import React from "react";
+import React from 'react';
+import Home from './container/home';
+import * as Store from './services/facade';
 
-import "./app.css";
-import  {AudioPlayer, Autocomplete, BreadcrumbSqli, Logo, MenuSofiane} from "@sqli/gui";
+export class App extends React.Component {
 
+    constructor(props) {
+        super(props);
+        console.warn(1, 'app')
+    }
 
+    componentDidMount() {
+        console.warn(2, 'app')
 
-export const App = () => {
-  return (
-    <div className="app">
-        <header>
-            <Logo size="medium" />
-            <MenuSofiane background={true} direction="horizontal" >
-                {[
-                    { label: 'Lien 1', action: 'http://google.fr' },
-                    { label: 'Lien 2', action: 'http://google.fr' },
-                    { label: 'Lien 3', action: 'http://google.fr' },
-                    { label: 'Lien 4', action: 'http://google.fr' }
-                ]}
-            </MenuSofiane>
-        </header>
-        <main>
-            <div>
-                <AudioPlayer/>
-            </div>
-            <div>
-                <BreadcrumbSqli/>
-                <Autocomplete />
-            </div>
-        </main>
-    </div>
-  );
-};
+        const action = new Store.Action(Store.ActionTypes.USER_GET_LIST, null);
+        Store.dispatch(action);
+    }
+    componentDidUpdate() {
+        console.warn(3, 'app')
+    }
+    componentWillUnmount() {
+        console.warn(4, 'app')
+    }
+
+    render() {
+        return (
+            <Home store={Store}/>
+        );
+    }
+}
 
 export default App;
