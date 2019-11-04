@@ -5,7 +5,6 @@ import {
     MenuSofiane,
     Footer,
     AudioPlayer,
-    BreadcrumbSqli,
     Autocomplete,
     Text, Button
 } from '@sqli/gui';
