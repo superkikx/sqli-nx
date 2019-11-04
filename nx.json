@@ -17,34 +17,7 @@
     "gui": {
       "tags": []
     },
-    "demo-khalil": {
-      "tags": []
-    },
-    "demo-khalil-e2e": {
-      "tags": []
-    },
-    "demo-sofiane": {
-      "tags": []
-    },
-    "demo-sofiane-e2e": {
-      "tags": []
-    },
-    "momo-demo": {
-      "tags": []
-    },
-    "momo-demo-e2e": {
-      "tags": []
-    },
-    "demo-ldev": {
-      "tags": []
-    },
-    "demo-ldev-e2e": {
-      "tags": []
-    },
-    "demo-abdeljelil": {
-      "tags": []
-    },
-    "demo-abdeljelil-e2e": {
+    "spotifoo": {
       "tags": []
     }
   }
